@@ -1,0 +1,271 @@
+head{
+    font-family: 'Poppins', sans-serif;
+}
+  
+body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+}
+  
+  /* LOGO */
+.logo {
+    float: left; /* Float the logo to the left side */
+    padding: 5px; /* Add padding for spacing */
+}
+  
+.logo img {
+    width: 120px; /* Set the width of the logo */
+    height: auto; 
+  }
+  
+  /* NAVBAR */
+nav {
+      background-color: #19A7CE;
+      overflow: hidden; /* ---Clear floats within the navbar */
+      padding: 5px 0;
+      /* text-align: center; */
+      position: fixed; /* Menyimpan navbar tetap di atas */
+      top: 0; /* Menyimpan navbar di bagian atas */
+      left: 0;
+      right: 0;
+  }
+    
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 5px; /* buat atasnya elemen navbar */
+      /* text-align: right; Align list items to the right */
+      float: right; /* Float the navigation links to the right side */
+      height: 45px; /* make navbar bigger */
+  }
+    
+  li {
+      display: inline-block; /* Display list items in a row */
+  }
+    
+  li a {
+      display: block;
+      color: white;
+      text-align: center;
+      margin-top: 3px;
+      padding: 19px 20px; /* Increase padding to make the navbar elements bigger */
+      text-decoration: none;
+      font-size: 20px; /* Increase font size */
+      border: 3px solid transparent; /* Add a border to create a button-like effect */
+      border-radius: 8px; /* Make the corners more rounded */
+      transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+  }
+    
+  li a:hover {
+      background-color: #a4e2f4; /* Change background color on hover */
+      color: black; /* saat dihover berubah warna */
+  }
+  
+  /* CONTENT1 */
+  .content1 {
+    display: flex; /* Use flexbox for side-by-side layout */
+    justify-content: space-between; /* Space evenly between text and image */
+    align-items: center; /* Center vertically */
+    padding: 30px; /* Add padding for spacing */
+    
+  }
+  
+  /* TEXT-CONTENT1 */
+  .text-content1 {
+    flex: 1; /* Allow the text container to grow and fill available space */
+    padding: 20px; /* Add padding for spacing */
+    text-align: left; /* Align text to the left */
+    font-style: italic;
+  }
+  
+  .text-content1 h1 {
+    font-size: 45px; /* Adjust the title's font size */
+    /* font-style: italic; */
+  }
+  
+  /* IMAGE-CONTENT1 */
+  .image-content1 {
+    /* flex: 1; Allow the image container to grow and fill available space */
+    padding: 20px; /* Add padding for spacing */
+    text-align: right; /* Align the image to the right */
+  }
+  
+  .image-content1 img {
+    /* max-width: 60%; Ensure the image doesn't exceed its container */
+    width:400px; 
+    height: auto;   
+  }
+  
+  /* CONTENT2 */
+.content2 {
+    display: flex; /* Use flexbox for side-by-side layout */
+    justify-content: center; /* Space evenly between text and image */
+    align-items: center; /* Center vertically */
+    padding: 10px; /* Add padding for spacing */
+    background-color: #F6F1F1; 
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.grid {
+    margin-top: 20px;
+    display: grid;
+    max-width: 1100px;
+    grid-gap: 2rem; /* mengurangi jarak antar card */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* menyesuaikan lebar card */
+    align-items: start;
+}
+
+.grid-item {
+    background-color: #fff;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.2s;
+    margin-bottom: 2rem; /* Menambahkan jarak antara card */
+}
+
+.grid-item:hover {
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+}
+  
+.card-img {
+    display: block;
+    /* width: 200px; */
+    height: 400px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 3rem;
+    text-decoration: none;
+}
+
+.card-header {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #0d0d0d;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.7;
+    color:#3d3d3d;
+    margin-bottom: 2rem;
+}
+
+.card-btn {
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #19A7CE;
+    background-color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+}
+
+.card-btn span {
+    margin-left: 1rem;
+    transition: 0.2s;
+}
+
+.card-btn:hover,
+.card-btn:active {
+    background-color: #73DDFA;
+}
+
+.card-btn:hover span,
+.card-btn:active span {
+    margin-left: 1.5rem;
+}
+
+footer {
+    background-color: #19A7CE;
+    color: #fff;
+    padding: 20px 0;
+    /* width: 1260px; */
+    height:auto;
+}
+  
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.footer-section {
+    flex: 1; 
+    padding: 0 20px;
+}
+  
+.footer-section h3 {
+    font-size: 18px;
+    margin-left: 8px;
+}
+  
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.footer-section ul li {
+    margin-bottom: 5px;
+    font-size: 15px;
+    color: #fff;
+}
+  
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none; 
+    font-size: 15px;
+    margin-left: 5px;
+}
+  
+.contact-info {
+    font-size: 15px;
+    margin-top: 0px;
+}
+  
+.contact-info li {
+    display: flex;
+    align-items: center;
+}
+  
+.contact-info img {
+    width: 27px;
+    height: 27px;
+    margin-right: 25px;
+}
+  
+.social-icons {
+    display: flex;
+    margin-top: 10px;
+}
+  
+.social-icons a img {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #fff;
+    width:50px;
+}
+  
+.download-icons {
+    text-align: right;
+    margin-top: 20px;
+}
+  
+.download-icons a img {
+    width: 106px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 27px;
+}
