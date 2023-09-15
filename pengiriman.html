@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/styles-pengiriman.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <title>SI GERCEP</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> 
+  <script src="js/pengiriman.js"></script>
+</head>
+
+<body>
+  <nav> <!-- navbar -->
+    <div class="logo">
+      <a href="index.html">
+      <img src="img/logo.png" alt="Logo">
+    </a>
+    </div>
+
+    <ul class="list-navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cek_resi.html">Cek Resi</a></li>
+      <li><a href="pengiriman.html">Pengiriman</a></li>
+      <li><a href="layanan.html">Layanan</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="content1"> <!-- section 1 -->
+      <div class="text-content1">
+        <h1>Lebih Hemat Gercep Kirim</h1>
+        <p>#Sampai Tujuan Tanpa Henti</p>
+      </div>
+
+      <div class="image-content1">
+        <img src="img/truk.png" alt="Image Desc">
+      </div>
+    </section>
+
+    <section class="content2"> 
+        <h2>PENGIRIMAN</h2>
+        <form action="#" method="post" onsubmit="return showPopup()">
+            <div class="form-group radio-grup">
+                <label for="layanan">Layanan</label>
+                <div class="radio-option">
+                    <input type="radio" name="layanan" value="Gercep" id="gercep">
+                    <label for="gercep">Gercep</label>
+                
+                    <input type="radio" name="layanan" value="Super Gercep" id="super-gercep">
+                    <label for="super-gercep">Super Gercep</label>
+                
+                    <input type="radio" name="layanan" value="Extra Gercep" id="extra-gercep">
+                    <label for="extra-gercep">Extra Gercep</label>
+               </div>
+            </div>
+
+            <div class="form-group">
+              <label for="asal">Asal</label>
+              <input type="text" placeholder="Masukkan Asal" name="asal" id="asal">
+          </div>
+
+            <div class="form-group">
+                <label for="tujuan">Tujuan</label>
+                <input type="text" placeholder="Masukkan Tujuan" name="tujuan" id="tujuan">
+            </div>
+
+            <div class="form-group">
+                <label for="pengirim">Pengirim</label>
+                <input type="text" placeholder="Masukkan Nama Pengirim" name="pengirim" id="pengirim">
+            </div>
+
+            <div class="form-group">
+                <label for="penerima">Penerima</label>
+                <input type="text" placeholder="Masukkan Nama Penerima" name="penerima" id="penerima">
+            </div>
+
+            <div class="form-group">
+                <label for="tanggal">Tanggal Pengiriman</label>
+                <input type="date" name="tanggal" id="tanggal">
+            </div>
+
+            <div class="btn-center">
+            <button type="submit" class="btn">Kirim</button>
+            </div>
+        </form>
+
+        <div class="popup" id="popup">
+          <span class="btn-close" onclick="closePopup()">&times;</span>
+            <h3>Detail Pengiriman</h3>
+          <div id="popup-content"></div>
+        </div>
+    </section>
+  </main>
+  <p></p>
+  <p></p>
+  <p></p>
+  <footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Informasi</h3>
+            <div class="footer-poin">
+            <ul>
+              <div class="list-footer">
+                <li><a href="s&k.html">S&K</a></li>
+              </div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Layanan</h3>
+            <div class="footer-poin">
+            <ul class="list-footer">
+                <li><a href="layanan.html">Gercep</a></li>
+                <li><a href="layanan.html">Super Gercep</a></li>
+                <li><a href="layanan.html">Extra Gercep</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Kontak</h3>
+            <ul class="contact-info">
+              <li>
+                  <img src="img/phone.png" alt="Telepon">
+                  021-1010-2323
+              </li>
+
+              <li>
+                  <img src="img/whatsapp.png" alt="Whatsapp">
+                  0812-7898-7654
+              </li>
+
+              <li>
+                  <img src="img/email.png" alt="Email">
+                  cs@sigercep.ac.id
+              </li>
+
+              <li>
+                <img src="img/office.png" alt="Office">
+                Jalan Amira Utama 1, Jakarta
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Media Sosial</h3>
+            <div class="social-icons">
+                <a href="https://www.instagram.com"><img src="img/instagram.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com"><img src="img/facebook.png" alt="Facebook"></a>
+            </div>
+        
+    
+    <div class="download-icons">
+        <a href="https://play.google.com"><img src="img/play_store.png" alt="Play Store"></a>
+        <a href="https://www.apple.com/app-store/"><img src="img/app_store.png" alt="App Store"></a>
+    </div>
+    </div>
+</footer>
+</body>
+</html>
