@@ -83,7 +83,6 @@ li a:hover {
 
 .text-content1 h1 {
   font-size: 45px; /* Adjust the title's font size */
-  /* font-style: italic; */
 }
 
 /* IMAGE-CONTENT1 */
@@ -113,13 +112,18 @@ li a:hover {
   }
 
   .text-content1 h1 {
-    font-size: 30px;
+    font-size: 25px;
     margin: 10px;
   }
 
   .image-content1 {
     padding: 20px;
     text-align: center;
+  }
+
+  .image-content1 img {
+    width: 280px;
+    height: auto;
   }
 }
 
@@ -135,7 +139,7 @@ li a:hover {
   }
 
   .text-content1 h1 {
-    font-size: 35px;
+    font-size: 30px;
     margin: 6px;
   }
 

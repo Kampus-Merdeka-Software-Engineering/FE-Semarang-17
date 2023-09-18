@@ -109,19 +109,24 @@ li a:hover {
   .text-content1 {
     padding: 10px;
     flex: 0; /* Allow the text container to grow and fill available space */
-    text-align: center; /* Align text to the left */
+    text-align: center;
     font-style: italic;
     font-size: 16px;
   }
 
   .text-content1 h1 {
-    font-size: 30px;
+    font-size: 25px;
     margin: 10px;
   }
 
   .image-content1 {
     padding: 20px;
     text-align: center;
+  }
+
+  .image-content1 img {
+    width: 280px;
+    height: auto;
   }
 }
 
@@ -137,7 +142,7 @@ li a:hover {
   }
 
   .text-content1 h1 {
-    font-size: 35px;
+    font-size: 30px;
     margin: 6px;
   }
 

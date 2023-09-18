@@ -109,19 +109,24 @@ li a:hover {
   .text-content1 {
     padding: 10px;
     flex: 0; /* Allow the text container to grow and fill available space */
-    text-align: center; /* Align text to the left */
+    text-align: center;
     font-style: italic;
     font-size: 16px;
   }
 
   .text-content1 h1 {
-    font-size: 30px;
+    font-size: 25px;
     margin: 10px;
   }
 
   .image-content1 {
     padding: 20px;
     text-align: center;
+  }
+
+  .image-content1 img {
+    width: 280px;
+    height: auto;
   }
 }
 
@@ -137,7 +142,7 @@ li a:hover {
   }
 
   .text-content1 h1 {
-    font-size: 35px;
+    font-size: 30px;
     margin: 6px;
   }
 
@@ -201,6 +206,40 @@ li a:hover {
 
 .card button:hover {
   opacity: 0.7;
+}
+
+/* Phone Responsif */
+@media (max-width: 767px) {
+  .content2 {
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-direction: column;
+    justify-content: center; /* Space evenly between text and image */
+    align-items: center; /* Center vertically */
+    padding: 40px; /* Add padding for spacing */
+    background-color: #f6f1f1;
+    min-height: 40vh;
+    box-sizing: border-box;
+  }
+
+  .card {
+    height: auto;
+    margin: auto;
+    text-align: center;
+    font-family: "Poppins";
+    max-width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .card img {
+    width: 10%; /* Mengisi lebar gambar dalam kartu */
+  }
+
+  .icon-card img {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /* Tablet Responsif */
