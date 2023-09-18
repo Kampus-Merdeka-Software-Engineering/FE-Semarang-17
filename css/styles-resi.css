@@ -125,6 +125,29 @@ li a:hover {
   }
 }
 
+/* Tablet Responsif */
+@media screen and (max-width: 1024px) {
+  .content1 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .text-content1 {
+    text-align: center;
+  }
+
+  .text-content1 h1 {
+    font-size: 35px;
+    margin: 6px;
+  }
+
+  .image-content1 {
+    padding: 10px;
+    text-align: center;
+    margin-top: 22px;
+  }
+}
+
 /* CONTENT2 */
 .content2 {
   display: flex;
@@ -137,7 +160,6 @@ li a:hover {
 /* Cek Resi */
 .cek-resi {
   padding: 50px 30px;
-  /* background-color: #eeeeee;  */
   display: flex;
   flex-direction: column;
 }
@@ -215,6 +237,17 @@ form.nomor-resi::after {
     border-radius: 5px;
     text-align: center;
     font-family: "Poppins";
+  }
+}
+
+/* Tablet Responsif */
+@media screen and (max-width: 1024px) {
+  .cek-resi {
+    padding: 25px;
+  }
+
+  .nomor-resi {
+    width: 650px;
   }
 }
 
@@ -374,5 +407,20 @@ footer {
   .contact-info li {
     display: flex;
     justify-content: center;
+  }
+}
+
+/* Tablet Responsif */
+@media screen and (max-width: 1024px) {
+  .download-icons {
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .download-icons a img {
+    align-items: center;
+    padding: 5px;
+    width: 110px;
+    height: 30px;
   }
 }

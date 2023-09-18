@@ -125,12 +125,31 @@ li a:hover {
   }
 }
 
+/* Tablet Responsif */
+@media screen and (max-width: 1024px) {
+  .content1 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .text-content1 {
+    text-align: center;
+  }
+
+  .text-content1 h1 {
+    font-size: 35px;
+    margin: 6px;
+  }
+
+  .image-content1 {
+    padding: 10px;
+    text-align: center;
+    margin-top: 22px;
+  }
+}
+
 /* CONTENT2 */
 .content2 {
-  /* display: flex; /* Use flexbox for side-by-side layout */
-  /* justify-content: center; Space evenly between text and image */
-  /* align-items: center; Center vertically */
-  /* padding: 10px; Add padding for spacing */
   background-color: #f6f1f1;
   margin: 0 auto;
   width: 65%;
@@ -186,12 +205,10 @@ input[type="radio"] {
 
 @media screen and (max-width: 767px) {
   .radio-option input[type="radio"] {
-    /* vertical-align: middle; */
     margin-right: 5px;
   }
 
   .radio-option label {
-    /* vertical-align: middle; */
     display: block;
     margin-bottom: 10px; /* Memberikan jarak antar radio buttons */
   }
@@ -393,5 +410,20 @@ footer {
   .contact-info li {
     display: flex;
     justify-content: center;
+  }
+}
+
+/* Tablet Responsif */
+@media screen and (max-width: 1024px) {
+  .download-icons {
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .download-icons a img {
+    align-items: center;
+    padding: 5px;
+    width: 110px;
+    height: 30px;
   }
 }
