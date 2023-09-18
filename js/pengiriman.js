@@ -46,6 +46,17 @@ function showPopup() {
   return false;
 }
 
+function resetForm() {
+  //agar inputan hilang setelah pop up ditutup
+  document.querySelector('input[name="layanan"]:checked').checked = false;
+  document.getElementById("asal").value = "";
+  document.getElementById("tujuan").value = "";
+  document.getElementById("pengirim").value = "";
+  document.getElementById("penerima").value = "";
+  document.getElementById("tanggal").value = "";
+}
+
 function closePopup() {
   document.getElementById("popup").style.display = "none"; //DOM
+  resetForm();
 }
