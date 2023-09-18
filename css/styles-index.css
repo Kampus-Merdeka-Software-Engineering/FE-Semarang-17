@@ -88,14 +88,12 @@ li a:hover {
 
 /* IMAGE-CONTENT1 */
 .image-content1 {
-  /* flex: 1; Allow the image container to grow and fill available space */
   padding: 20px; /* Add padding for spacing */
   text-align: right; /* Align the image to the right */
 }
 
 .image-content1 img {
-  /* max-width: 60%; Ensure the image doesn't exceed its container */
-  width: 80%;
+  width: 400px;
   height: auto;
 }
 
@@ -153,7 +151,7 @@ li a:hover {
   top: 50%;
   width: auto;
   padding: 16px;
-  margin-top: 220px;
+  margin-top: 240px;
   color: white;
   font-weight: bold;
   font-size: 18px;
