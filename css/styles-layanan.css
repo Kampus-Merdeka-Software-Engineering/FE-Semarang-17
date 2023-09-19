@@ -118,7 +118,7 @@ li a:hover {
 }
 
 /* Phone Responsif */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 428px) {
   .content1 {
     display: flex;
     flex-direction: column-reverse;
@@ -227,7 +227,7 @@ li a:hover {
 }
 
 /* Phone Responsif */
-@media (max-width: 767px) {
+@media (max-width: 428px) {
   .content2 {
     display: flex; /* Use flexbox for side-by-side layout */
     flex-direction: column;
@@ -406,7 +406,7 @@ footer {
 }
 
 /* Phone Responsif */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 428px) {
   .footer-container {
     display: flex;
     flex-direction: column;
@@ -453,6 +453,7 @@ footer {
 
   .burger{
     display: block;
+    margin-left: 300px;
     margin-top: 40px;
     background-color: #19a7ce;
   }
