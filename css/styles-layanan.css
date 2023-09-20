@@ -9,14 +9,14 @@ body {
 }
 
 /* Burger */
-.burger{
+.burger {
   display: none;
   cursor: pointer;
   margin-top: -50px;
   margin-left: 600px;
 }
 
-.burger .bar{
+.burger .bar {
   display: block;
   width: 25px;
   height: 3px;
@@ -191,6 +191,7 @@ li a:hover {
   border: 1px solid #ccc;
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
 }
 
 .card img {
@@ -451,26 +452,26 @@ footer {
     justify-content: center;
   }
 
-  .burger{
+  .burger {
     display: block;
     margin-left: 300px;
     margin-top: 40px;
     background-color: #19a7ce;
   }
 
-  .burger.active .bar:nth-child(2){
+  .burger.active .bar:nth-child(2) {
     opacity: 0;
   }
 
-  .burger.active .bar:nth-child(1){
+  .burger.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
 
-  .burger.active .bar:nth-child(3){
+  .burger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  .list-navbar{
+  .list-navbar {
     position: fixed;
     left: -1000px;
     top: 80px;
@@ -483,13 +484,13 @@ footer {
     text-align: center;
     transition: 0.3s;
   }
-  
-  .nav-item{
+
+  .nav-item {
     margin-top: 16px;
     margin-right: 100px;
   }
 
-  .list-navbar.active{
+  .list-navbar.active {
     left: 0;
   }
 }
