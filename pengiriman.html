@@ -95,6 +95,14 @@
         </form>
 
         <div class="overlay" id="overlay"></div> <!--buat latar belakang blur-->
+
+        <div class="popup confirmation-popup" id="confirmation-popup">
+          <h3>Konfirmasi</h3>
+          <p>Apakah data yang Anda masukkan sudah benar dan yakin untuk diproses?</p>
+          <button class="btn-confirm" onclick="showDetailPopup()">Ya, lanjut</button>
+          <button class="btn-confirm" onclick="closeConfirmationPopup()">Tidak, kembali mengisi</button>
+        </div>
+
         <div class="popup" id="popup">
           <span class="btn-close" onclick="closePopup()">&times;</span>
             <h3>Detail Pengiriman</h3>

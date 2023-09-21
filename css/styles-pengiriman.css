@@ -257,6 +257,19 @@ input[type="radio"] {
   font-family: "Poppins";
 }
 
+.btn-confirm {
+  background-color: #19a7ce;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins";
+  text-align: center; /* Menyamakan tombol ke tengah */
+  display: inline-block;
+  margin-right: 15px;
+}
+
 .overlay {
   display: none;
   position: fixed;
@@ -287,6 +300,21 @@ input[type="radio"] {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1000; /*9999*/
   cursor: pointer;
+}
+
+.confirmation-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /*9999*/
+  cursor: pointer;
+  text-align: center;
 }
 
 /* Gaya elemen body saat popup aktif */
