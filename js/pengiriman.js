@@ -1,6 +1,8 @@
 function showPopup() {
   // Mendapatkan nilai yang dimasukkan oleh pengguna (misalnya, pilihan layanan)
   var Layanan_dipilih = document.querySelector('input[name="layanan"]:checked'); //DOM
+
+  // Mendapatkan nilai layanan yang dipilih
   var layanan = Layanan_dipilih
     ? Layanan_dipilih.value
     : "Layanan tidak dipilih"; // Default jika tidak ada yang dipilih
@@ -22,6 +24,10 @@ function showPopup() {
 
   // menampilkan pesan
   var message =
+    "<strong>Selamat, data pengiriman Anda telah berhasil diproses!</strong>" +
+    "<br>" +
+    "<br>";
+  message +=
     "<strong>Layanan                         :</strong> " + layanan + "<br>";
   message +=
     "<strong>Asal                                       :</strong> " +
@@ -36,11 +42,16 @@ function showPopup() {
   message += "<strong>Tgl Pengiriman  :</strong> " + tanggalFormatted + "<br>";
   message += "<strong>No Resi                         :</strong> " + no_resi;
 
-  // // Menampilkan pesan dalam popup box
+  // Menampilkan pesan dalam popup box
   // alert(message);
-
   document.getElementById("popup-content").innerHTML = message; //DOM
   document.getElementById("popup").style.display = "block"; //DOM
+
+  // Tampilkan overlay saat popup muncul
+  document.getElementById("overlay").style.display = "block";
+
+  // Tambahkan kelas popup-active pada elemen body jadi tdk bisa scroll kalau pop up muncul
+  document.body.classList.add("popup-active");
 
   // Kembalikan false untuk mencegah formulir mengirimkan data
   return false;
@@ -58,19 +69,25 @@ function resetForm() {
 
 function closePopup() {
   document.getElementById("popup").style.display = "none"; //DOM
+  document.getElementById("overlay").style.display = "none";
   resetForm();
+
+  // Hapus kelas popup-active dari elemen body
+  document.body.classList.remove("popup-active");
 }
 
 // burger
-const burger=document.querySelector(".burger");
-const listNavbar=document.querySelector(".list-navbar");
+const burger = document.querySelector(".burger");
+const listNavbar = document.querySelector(".list-navbar");
 
-burger.addEventListener("click", ()=>{
+burger.addEventListener("click", () => {
   burger.classList.toggle("active");
   listNavbar.classList.toggle("active");
-})
+});
 
-document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", ()=>{
-  burger.classList.remove("active");
-  listNavbar.classList.remove("active");
-}))
+document.querySelectorAll(".nav-link").forEach((n) =>
+  n.addEventListener("click", () => {
+    burger.classList.remove("active");
+    listNavbar.classList.remove("active");
+  })
+);

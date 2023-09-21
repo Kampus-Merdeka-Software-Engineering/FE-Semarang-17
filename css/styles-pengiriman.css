@@ -9,14 +9,14 @@ body {
 }
 
 /* Burger */
-.burger{
+.burger {
   display: none;
   cursor: pointer;
   margin-top: -50px;
   margin-left: 600px;
 }
 
-.burger .bar{
+.burger .bar {
   display: block;
   width: 25px;
   height: 3px;
@@ -196,6 +196,11 @@ label {
   margin-bottom: 5px;
 }
 
+label.required-label::after {
+  content: " *";
+  color: red;
+}
+
 input[type="text"],
 input[type="date"] {
   width: 100%;
@@ -252,6 +257,24 @@ input[type="radio"] {
   font-family: "Poppins";
 }
 
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Warna latar belakang dengan efek transparansi */
+  backdrop-filter: blur(5px); /* Efek blur */
+  z-index: 999; /* Atur di atas semua elemen lain */
+  cursor: pointer;
+}
+
 .popup {
   display: none;
   position: fixed;
@@ -262,8 +285,13 @@ input[type="radio"] {
   padding: 20px;
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
+  z-index: 1000; /*9999*/
   cursor: pointer;
+}
+
+/* Gaya elemen body saat popup aktif */
+body.popup-active {
+  overflow: hidden; /* Menyembunyikan scrollbar saat popup aktif */
 }
 
 .popup h3 {
@@ -435,26 +463,26 @@ footer {
     justify-content: center;
   }
 
-  .burger{
+  .burger {
     display: block;
     margin-left: 300px;
     margin-top: 40px;
     background-color: #19a7ce;
   }
 
-  .burger.active .bar:nth-child(2){
+  .burger.active .bar:nth-child(2) {
     opacity: 0;
   }
 
-  .burger.active .bar:nth-child(1){
+  .burger.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
 
-  .burger.active .bar:nth-child(3){
+  .burger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  .list-navbar{
+  .list-navbar {
     position: fixed;
     left: -1000px;
     top: 80px;
@@ -467,13 +495,13 @@ footer {
     text-align: center;
     transition: 0.3s;
   }
-  
-  .nav-item{
+
+  .nav-item {
     margin-top: 16px;
     margin-right: 100px;
   }
 
-  .list-navbar.active{
+  .list-navbar.active {
     left: 0;
   }
 }

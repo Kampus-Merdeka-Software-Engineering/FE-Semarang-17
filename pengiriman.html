@@ -51,42 +51,42 @@
         <h2>PENGIRIMAN</h2>
         <form action="#" method="post" onsubmit="return showPopup()">
             <div class="form-group radio-grup">
-                <label for="layanan">Layanan</label>
+                <label for="layanan" class="required-label">Layanan</label>
                 <div class="radio-option">
-                    <input type="radio" name="layanan" value="Gercep" id="gercep">
+                    <input type="radio" name="layanan" value="Gercep" id="gercep" required>
                     <label for="gercep">Gercep</label>
                 
-                    <input type="radio" name="layanan" value="Super Gercep" id="super-gercep">
+                    <input type="radio" name="layanan" value="Super Gercep" id="super-gercep" required>
                     <label for="super-gercep">Super Gercep</label>
                 
-                    <input type="radio" name="layanan" value="Extra Gercep" id="extra-gercep">
+                    <input type="radio" name="layanan" value="Extra Gercep" id="extra-gercep" required>
                     <label for="extra-gercep">Extra Gercep</label>
                </div>
             </div>
 
             <div class="form-group">
-              <label for="asal">Asal</label>
-              <input type="text" placeholder="Masukkan Asal" name="asal" id="asal">
+              <label for="asal" class="required-label">Asal</label>
+              <input type="text" placeholder="Masukkan Asal" name="asal" id="asal" required>
           </div>
 
             <div class="form-group">
-                <label for="tujuan">Tujuan</label>
-                <input type="text" placeholder="Masukkan Tujuan" name="tujuan" id="tujuan">
+                <label for="tujuan" class="required-label">Tujuan</label>
+                <input type="text" placeholder="Masukkan Tujuan" name="tujuan" id="tujuan" required>
             </div>
 
             <div class="form-group">
-                <label for="pengirim">Pengirim</label>
-                <input type="text" placeholder="Masukkan Nama Pengirim" name="pengirim" id="pengirim">
+                <label for="pengirim" class="required-label">Pengirim</label>
+                <input type="text" placeholder="Masukkan Nama Pengirim" name="pengirim" id="pengirim" required>
             </div>
 
             <div class="form-group">
-                <label for="penerima">Penerima</label>
-                <input type="text" placeholder="Masukkan Nama Penerima" name="penerima" id="penerima">
+                <label for="penerima" class="required-label">Penerima</label>
+                <input type="text" placeholder="Masukkan Nama Penerima" name="penerima" id="penerima" required>
             </div>
 
             <div class="form-group">
-                <label for="tanggal">Tanggal Pengiriman</label>
-                <input type="date" name="tanggal" id="tanggal">
+                <label for="tanggal" class="required-label">Tanggal Pengiriman</label>
+                <input type="date" name="tanggal" id="tanggal" required>
             </div>
 
             <div class="btn-center">
@@ -94,6 +94,7 @@
             </div>
         </form>
 
+        <div class="overlay" id="overlay"></div> <!--buat latar belakang blur-->
         <div class="popup" id="popup">
           <span class="btn-close" onclick="closePopup()">&times;</span>
             <h3>Detail Pengiriman</h3>
