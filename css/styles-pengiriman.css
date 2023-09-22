@@ -257,6 +257,11 @@ input[type="radio"] {
   font-family: "Poppins";
 }
 
+.btn:hover {
+  background: azure;
+  color: black;
+}
+
 .btn-confirm {
   background-color: #19a7ce;
   color: #fff;
@@ -265,9 +270,14 @@ input[type="radio"] {
   border-radius: 5px;
   cursor: pointer;
   font-family: "Poppins";
-  text-align: center; /* Menyamakan tombol ke tengah */
+  text-align: center;
   display: inline-block;
   margin-right: 15px;
+}
+
+.btn-confirm:hover {
+  background: azure;
+  color: black;
 }
 
 .overlay {
