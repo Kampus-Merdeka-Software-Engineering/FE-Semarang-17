@@ -40,8 +40,7 @@ function showDetailPopup() {
     "<strong>Selamat, data pengiriman Anda telah berhasil diproses!</strong>" +
     "<br>" +
     "<br>";
-  message +=
-    "<strong>--------------------------------------</strong> " + "<br>";
+  message += "<strong>---------------------------------</strong> " + "<br>";
   message +=
     "<strong>Layanan                         :</strong> " + layanan + "<br>";
   message +=
@@ -57,7 +56,7 @@ function showDetailPopup() {
   message += "<strong>Tgl Pengiriman  :</strong> " + tanggalFormatted + "<br>";
   message +=
     "<strong>No Resi                         :</strong> " + no_resi + "<br>";
-  message += "<strong>--------------------------------------</strong> ";
+  message += "<strong>---------------------------------</strong> ";
 
   // Menampilkan pesan dalam pop-up detail pengiriman
   document.getElementById("popup-content").innerHTML = message;
