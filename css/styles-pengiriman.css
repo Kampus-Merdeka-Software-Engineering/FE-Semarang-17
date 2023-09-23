@@ -280,6 +280,27 @@ input[type="radio"] {
   color: black;
 }
 
+/* Mobile Responsif */
+@media screen and (max-width: 767px) {
+  .btn-confirm {
+    padding: 8px 16px;
+    font-size: 10px;
+    margin-right: 10px;
+  }
+
+  .confirmation-popup {
+    width: 60%; /* Mengurangi lebar popup agar sesuai dengan tampilan mobile */
+    padding: 10px;
+    font-size: 11px;
+  }
+
+  .popup {
+    width: 60%; /* Mengurangi lebar popup agar sesuai dengan tampilan mobile */
+    padding: 10px;
+    font-size: 11px;
+  }
+}
+
 .overlay {
   display: none;
   position: fixed;
