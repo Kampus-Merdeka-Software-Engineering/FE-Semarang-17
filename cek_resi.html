@@ -49,18 +49,37 @@
     <section class="content2">
         <div class="cek-resi">
             <h1>CEK RESI</h1>
-            <!-- Load icon library
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-            <form class="nomor-resi" action="#">
-                <input type="text" placeholder="Masukkan Nomor Resi Pengiriman" name="search">
-                <button type="submit" href="#" class="button">
+            <form class="nomor-resi" action="#" id="tracking-form">
+                <input type="text" placeholder="Masukkan Nomor Resi Pengiriman" name="search" id="resi-input">
+                <button type="button" class="button" id="track-button">
                     <span>Lacak</span>
                 </button>
             </form>
+        
+        <div class="result">
+          <div class="table-container">
+          <table id="tracking-table">
+              <thead>
+                  <tr>
+                      <th>Nomor Resi</th>
+                      <th>Layanan</th>
+                      <th>Asal</th>
+                      <th>Tujuan</th>
+                      <th>Penerima</th>
+                      <th>Tanggal Diterima</th>
+                      <th>Penerima Paket</th>
+                      <th>Status</th>
+                  </tr>
+              </thead>
+              <tbody id="tracking-data">
+                  <!-- Data akan ditampilkan di sini setelah pencarian -->
+              </tbody>
+          </table>
         </div>
-        <script src="js/resi.js"></script>
+      </div>
+    </div>
+        <script src="js/resi.js" defer></script>
     </section>
-
   </main>
 
   <footer>

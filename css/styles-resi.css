@@ -194,10 +194,9 @@ li a:hover {
 
 .nomor-resi {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
-  margin: 25px 10px;
+  align-items: center;
+  margin: 20px 10px;
   width: 800px;
 }
 
@@ -205,18 +204,16 @@ form.nomor-resi input[type="text"] {
   padding: 10px;
   font-size: 18px;
   border: 1px solid #19a7ce;
-  float: left;
   width: 100%;
   background: white;
   border-radius: 5px;
   text-align: center;
   font-family: "Poppins";
+  margin-right: 8px;
 }
 
 form.nomor-resi button {
   margin: 0px 10px;
-  margin-top: 40px;
-  float: left;
   width: 130px;
   height: 40px;
   background: #19a7ce;
@@ -238,6 +235,45 @@ form.nomor-resi::after {
   content: "";
   clear: both;
   display: table;
+}
+
+.table-container {
+  display: flex;
+  margin-top: 8px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#tracking-table {
+  display: none; /* Sembunyikan tabel secara awal */
+  width: 100%;
+  margin-top: 8px;
+  border-collapse: collapse; /* Gabungkan garis antara sel tabel */
+  font-size: 15px;
+}
+
+/* Gaya untuk sel tabel di dalam tabel hasil */
+#tracking-table th,
+#tracking-table td {
+  border: 1px solid #ddd; /* Garis batas sel tabel */
+  padding: 8px;
+}
+
+/* Gaya untuk baris kepala tabel (thead) */
+#tracking-table thead {
+  background-color: #19a7ce; /* Warna latar belakang kepala tabel */
+  color: #fff; /* Warna teks kepala tabel */
+}
+
+/* Gaya untuk baris isi tabel (tbody) */
+#tracking-table tbody tr:nth-child(even) {
+  background-color: #f6f1f1; /* Warna latar belakang baris genap */
+}
+
+/* Gaya untuk baris tabel saat dihover */
+#tracking-table tbody tr:hover {
+  background-color: #ddd; /* Warna latar belakang saat dihover */
 }
 
 /* Phone Responsif */
