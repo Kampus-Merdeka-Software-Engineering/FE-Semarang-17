@@ -266,10 +266,10 @@ form.nomor-resi::after {
   color: #fff; /* Warna teks kepala tabel */
 }
 
-/* Gaya untuk baris isi tabel (tbody) */
+/* Gaya untuk baris isi tabel (tbody)
 #tracking-table tbody tr:nth-child(even) {
-  background-color: #f6f1f1; /* Warna latar belakang baris genap */
-}
+  background-color: #f6f1f1; Warna latar belakang baris genap 
+} */
 
 /* Gaya untuk baris tabel saat dihover */
 #tracking-table tbody tr:hover {
@@ -298,6 +298,28 @@ form.nomor-resi::after {
     text-align: center;
     font-family: "Poppins";
     width: 280px;
+  }
+
+  form.nomor-resi button {
+    margin-top: 30px;
+  }
+
+  .table-container {
+    display: block; /* Tampilkan tabel di bawah tombol */
+
+    overflow-y: auto; /* Beri kemampuan scroll vertikal jika diperlukan */
+  }
+
+  #tracking-table {
+    display: none;
+    margin-top: 20px; /* Jarak antara tombol dan tabel di layar mobile */
+  }
+
+  #tracking-table th,
+  #tracking-table td {
+    display: table-cell; /* Ganti display ke 'table-cell' agar sel-sel memenuhi lebar tabel */
+    width: 100%; /* Selalu memenuhi lebar layar */
+    box-sizing: border-box; /* Pastikan padding tidak melebar tabel */
   }
 }
 
