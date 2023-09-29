@@ -266,14 +266,13 @@ form.nomor-resi::after {
   color: #fff; /* Warna teks kepala tabel */
 }
 
-/* Gaya untuk baris isi tabel (tbody)
+/* bg kolom genap
 #tracking-table tbody tr:nth-child(even) {
   background-color: #f6f1f1; Warna latar belakang baris genap 
 } */
 
-/* Gaya untuk baris tabel saat dihover */
 #tracking-table tbody tr:hover {
-  background-color: #ddd; /* Warna latar belakang saat dihover */
+  background-color: #ddd;
 }
 
 /* Phone Responsif */
@@ -282,10 +281,11 @@ form.nomor-resi::after {
     padding: 25px;
   }
 
-  .nomor-resi {
+  #tracking-form.nomor-resi {
     flex-direction: column;
     width: 400px;
     align-items: center;
+    justify-content: center;
   }
 
   form.nomor-resi input[type="text"] {
@@ -306,13 +306,13 @@ form.nomor-resi::after {
 
   .table-container {
     display: block; /* Tampilkan tabel di bawah tombol */
-
     overflow-y: auto; /* Beri kemampuan scroll vertikal jika diperlukan */
   }
 
   #tracking-table {
     display: none;
     margin-top: 20px; /* Jarak antara tombol dan tabel di layar mobile */
+    font-size: 12px;
   }
 
   #tracking-table th,
@@ -329,8 +329,10 @@ form.nomor-resi::after {
     padding: 25px;
   }
 
-  .nomor-resi {
+  #tracking-form.nomor-resi {
     width: 650px;
+    justify-content: center;
+    align-items: center;
   }
 }
 
