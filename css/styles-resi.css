@@ -305,8 +305,8 @@ form.nomor-resi::after {
   }
 
   .table-container {
-    display: block; /* Tampilkan tabel di bawah tombol */
-    overflow-y: auto; /* Beri kemampuan scroll vertikal jika diperlukan */
+    display: block;
+    overflow-x: auto;
   }
 
   #tracking-table {
@@ -317,9 +317,9 @@ form.nomor-resi::after {
 
   #tracking-table th,
   #tracking-table td {
-    display: table-cell; /* Ganti display ke 'table-cell' agar sel-sel memenuhi lebar tabel */
-    width: 100%; /* Selalu memenuhi lebar layar */
-    box-sizing: border-box; /* Pastikan padding tidak melebar tabel */
+    display: table-cell;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
