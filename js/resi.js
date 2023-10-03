@@ -1,4 +1,3 @@
-// js/resi.js
 document.addEventListener("DOMContentLoaded", function () {
   const trackButton = document.getElementById("track-button");
   const resiInput = document.getElementById("resi-input");
@@ -6,43 +5,48 @@ document.addEventListener("DOMContentLoaded", function () {
   const trackingData = document.getElementById("tracking-data");
 
   trackButton.addEventListener("click", function (e) {
-    e.preventDefault(); // Hindari pengiriman formulir (karena ini hanya contoh simulasi)
+    e.preventDefault();
 
-    // Pastikan ada nomor resi sebelum menampilkan tabel
     if (resiInput.value.trim() !== "") {
-      // Data simulasi
-      const searchData = {
-        nomorResi: "12345",
-        layanan: "Gercep",
-        asal: "Kota A",
-        tujuan: "Kota B",
-        penerima: "John Doe",
-        tanggalDiterima: "2023-09-27",
-        penerimaPaket: "Jane Doe",
-        status: "Diterima",
-      };
+      fetch(`http://localhost:3000/api/cek-resi/${resiInput.value}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => {
+          if (res.ok) {
+            return res.json(); // Mengambil data JSON dari respons HTTP
+          } else {
+            alert("Gagal mendapatkan data");
+            throw new Error("Gagal mendapatkan data");
+          }
+        })
+        .then((data) => {
+          // Menampilkan data dalam tabel
+          const { no_resi, layanan, asal, tujuan, pengirim, penerima, tanggal } = data;
+          trackingData.innerHTML = `
+            <tr>
+                <td>${no_resi}</td>
+                <td>${layanan}</td>
+                <td>${asal}</td>
+                <td>${tujuan}</td>
+                <td>${pengirim}</td>
+                <td>${penerima}</td>
+                <td>${tanggal}</td>
+            </tr>
+          `;
 
-      // Tampilkan data dalam tabel
-      trackingData.innerHTML = `
-                <tr>
-                    <td>${searchData.nomorResi}</td>
-                    <td>${searchData.layanan}</td>
-                    <td>${searchData.asal}</td>
-                    <td>${searchData.tujuan}</td>
-                    <td>${searchData.penerima}</td>
-                    <td>${searchData.tanggalDiterima}</td>
-                    <td>${searchData.penerimaPaket}</td>
-                    <td>${searchData.status}</td>
-                </tr>
-            `;
-
-      // Tampilkan tabel
-      trackingTable.style.display = "table";
+          // Tampilkan tabel
+          trackingTable.style.display = "table";
+        })
+        .catch((error) => {
+          alert(`Error messages: ${error.message}`);
+        });
     }
   });
 });
 
-// burger
 const burger = document.querySelector(".burger");
 const listNavbar = document.querySelector(".list-navbar");
 

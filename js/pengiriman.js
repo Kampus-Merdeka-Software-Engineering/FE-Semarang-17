@@ -17,15 +17,15 @@ function showDetailPopup() {
   closeConfirmationPopup();
 
   // Dapatkan nilai input dari pengguna
-  var Layanan_dipilih = document.querySelector('input[name="layanan"]:checked');
-  var layanan = Layanan_dipilih
-    ? Layanan_dipilih.value
-    : "Layanan tidak dipilih";
-  var asal = document.getElementById("asal").value;
-  var tujuan = document.getElementById("tujuan").value;
-  var pengirim = document.getElementById("pengirim").value;
-  var penerima = document.getElementById("penerima").value;
-  var tanggal = document.getElementById("tanggal").value;
+  const layanan_dipilih = document.querySelector('input[name="layanan"]:checked');
+  const layanan = layanan_dipilih
+    ? layanan_dipilih.value
+    : "layanan tidak dipilih";
+  const asal = document.getElementById("asal").value;
+  const tujuan = document.getElementById("tujuan").value;
+  const pengirim = document.getElementById("pengirim").value;
+  const penerima = document.getElementById("penerima").value;
+  const tanggal = document.getElementById("tanggal").value;
 
   // Memformat tanggal menjadi dd/mm/yyyy
   var tanggalParts = tanggal.split("-");
@@ -33,7 +33,7 @@ function showDetailPopup() {
     tanggalParts[2] + "/" + tanggalParts[1] + "/" + tanggalParts[0];
 
   // Membuat nomor resi acak
-  var no_resi = Math.floor(Math.random() * 1000000);
+  const no_resi = Math.floor(Math.random() * 1000000);
 
   // menampilkan pesan detail pengiriman
   var message =
@@ -63,6 +63,32 @@ function showDetailPopup() {
   document.getElementById("popup").style.display = "block";
   document.getElementById("overlay").style.display = "block";
   document.body.classList.add("popup-active");
+
+  // POST
+  fetch("http://localhost:3000/api/pengiriman",{
+    method:"POST",
+    headers: {
+        "Content-Type":"application/json"
+    },
+    body: JSON.stringify({
+        no_resi: no_resi,
+        layanan: layanan,
+        asal: asal,
+        tujuan: tujuan,
+        pengirim: pengirim,
+        penerima: penerima,
+        tanggal: tanggal
+    })
+  }).then((res)=>{
+    if(res.ok){
+        alert("Berhasil menambahkan customer!")
+    }else{
+        alert("Gagal menambahkan customer!")
+    }
+    console.log(res);
+  }).catch((error)=>{
+    alert(`Error messages: ${error.message}`);
+  });
 }
 
 function resetForm() {
@@ -107,3 +133,4 @@ document.querySelectorAll(".nav-link").forEach((n) =>
     listNavbar.classList.remove("active");
   })
 );
+
