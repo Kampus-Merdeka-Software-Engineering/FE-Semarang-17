@@ -311,7 +311,7 @@ form.nomor-resi::after {
 
   #tracking-table {
     display: none;
-    margin-top: 20px; /* Jarak antara tombol dan tabel di layar mobile */
+    margin-top: 20px;
     font-size: 12px;
   }
 
