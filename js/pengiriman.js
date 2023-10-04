@@ -81,9 +81,9 @@ function showDetailPopup() {
     })
   }).then((res)=>{
     if(res.ok){
-        alert("Berhasil menambahkan customer!")
+        alert("Berhasil manambahkan data!")
     }else{
-        alert("Gagal menambahkan customer!")
+        alert("Gagal menambahkan data!")
     }
     console.log(res);
   }).catch((error)=>{
