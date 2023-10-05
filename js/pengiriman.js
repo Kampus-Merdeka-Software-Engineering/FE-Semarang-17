@@ -27,7 +27,7 @@ function showDetailPopup() {
   const pengirim = document.getElementById("pengirim").value;
   const penerima = document.getElementById("penerima").value;
   const tanggal = document.getElementById("tanggal").value;
-  const baseUrl = "http://be-semarang-17-production.up.railway.app";
+  const baseUrl = "https://be-semarang-17-production.up.railway.app";
 
   // Memformat tanggal menjadi dd/mm/yyyy
   var tanggalParts = tanggal.split("-");

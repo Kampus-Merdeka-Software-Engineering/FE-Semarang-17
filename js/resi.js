@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const resiInput = document.getElementById("resi-input");
   const trackingTable = document.getElementById("tracking-table");
   const trackingData = document.getElementById("tracking-data");
-  const baseUrl = "http://be-semarang-17-production.up.railway.app";
+  const baseUrl = "https://be-semarang-17-production.up.railway.app";
 
   trackButton.addEventListener("click", function (e) {
     e.preventDefault();
