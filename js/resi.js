@@ -3,13 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const resiInput = document.getElementById("resi-input");
   const trackingTable = document.getElementById("tracking-table");
   const trackingData = document.getElementById("tracking-data");
+  const baseUrl = "http://be-semarang-17-production.up.railway.app";
 
   trackButton.addEventListener("click", function (e) {
     e.preventDefault();
 
     if (resiInput.value.trim() !== "") {
       const no_resi = resiInput.value.trim();
-      fetch(`http://localhost:3000/api/cek-resi/${no_resi}`, {
+      fetch(`${baseUrl}/api/cek-resi/${no_resi}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

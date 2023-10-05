@@ -27,6 +27,7 @@ function showDetailPopup() {
   const pengirim = document.getElementById("pengirim").value;
   const penerima = document.getElementById("penerima").value;
   const tanggal = document.getElementById("tanggal").value;
+  const baseUrl = "http://be-semarang-17-production.up.railway.app";
 
   // Memformat tanggal menjadi dd/mm/yyyy
   var tanggalParts = tanggal.split("-");
@@ -34,7 +35,7 @@ function showDetailPopup() {
     tanggalParts[2] + "/" + tanggalParts[1] + "/" + tanggalParts[0];
 
   // POST
-  fetch("http://localhost:3000/api/pengiriman", {
+  fetch(`${baseUrl}/api/pengiriman`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -58,7 +59,7 @@ function showDetailPopup() {
         document.body.classList.add("popup-active");
 
         // Setelah berhasil POST, kita dapat mengambil data terakhir dari database
-        fetch("http://localhost:3000/api/pengirimans/terakhir", {
+        fetch(`${baseUrl}/api/pengirimans/terakhir`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
