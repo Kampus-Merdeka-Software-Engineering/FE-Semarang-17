@@ -12,6 +12,7 @@ function closeConfirmationPopup() {
   document.body.classList.remove("popup-active");
 }
 
+
 function showDetailPopup() {
   // Tutup pop-up konfirmasi
   closeConfirmationPopup();
@@ -32,63 +33,87 @@ function showDetailPopup() {
   var tanggalFormatted =
     tanggalParts[2] + "/" + tanggalParts[1] + "/" + tanggalParts[0];
 
-  // Membuat nomor resi acak
-  const no_resi = Math.floor(Math.random() * 1000000);
-
-  // menampilkan pesan detail pengiriman
-  var message =
-    "<strong>Selamat, data pengiriman Anda telah berhasil diproses!</strong>" +
-    "<br>" +
-    "<br>";
-  message += "<strong>---------------------------------</strong> " + "<br>";
-  message +=
-    "<strong>Layanan                         :</strong> " + layanan + "<br>";
-  message +=
-    "<strong>Asal                                       :</strong> " +
-    asal +
-    "<br>";
-  message +=
-    "<strong>Tujuan                             :</strong> " + tujuan + "<br>";
-  message +=
-    "<strong>Pengirim                       :</strong> " + pengirim + "<br>";
-  message +=
-    "<strong>Penerima                    :</strong> " + penerima + "<br>";
-  message += "<strong>Tgl Pengiriman  :</strong> " + tanggalFormatted + "<br>";
-  message +=
-    "<strong>No Resi                         :</strong> " + no_resi + "<br>";
-  message += "<strong>---------------------------------</strong> ";
-
-  // Menampilkan pesan dalam pop-up detail pengiriman
-  document.getElementById("popup-content").innerHTML = message;
-  document.getElementById("popup").style.display = "block";
-  document.getElementById("overlay").style.display = "block";
-  document.body.classList.add("popup-active");
-
   // POST
-  fetch("http://localhost:3000/api/pengiriman",{
-    method:"POST",
+  fetch("http://localhost:3000/api/pengiriman", {
+    method: "POST",
     headers: {
-        "Content-Type":"application/json"
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
-        no_resi: no_resi,
-        layanan: layanan,
-        asal: asal,
-        tujuan: tujuan,
-        pengirim: pengirim,
-        penerima: penerima,
-        tanggal: tanggal
+      // no_resi: no_resi,
+      layanan: layanan,
+      asal: asal,
+      tujuan: tujuan,
+      pengirim: pengirim,
+      penerima: penerima,
+      tanggal: tanggal,
+    }),
+  })
+    .then((res) => {
+      if (res.ok) {
+        // Menampilkan pesan dalam pop-up detail pengiriman
+        document.getElementById("popup-content").innerHTML = "Berhasil menambahkan data!";
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+        document.body.classList.add("popup-active");
+
+        // Setelah berhasil POST, kita dapat mengambil data terakhir dari database
+        fetch("http://localhost:3000/api/pengirimans/terakhir", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            if (res.ok) {
+              return res.json(); // Mengambil data JSON dari respons HTTP
+            } else {
+              alert("Gagal mendapatkan data");
+              throw new Error("Gagal mendapatkan data");
+            }
+          })
+          .then((data) => {
+            const {
+              no_resi,
+              layanan,
+              asal,
+              tujuan,
+              pengirim,
+              penerima,
+              tanggal,
+            } = data;
+            // menampilkan pesan detail pengiriman
+            var message =
+              "<strong>Selamat, data pengiriman Anda telah berhasil diproses!</strong>" +
+              "<br>" +
+              "<br>";
+            message += "<strong>---------------------------------</strong> " + "<br>";
+            message +=
+              "<strong>Layanan                         :</strong> " + layanan + "<br>";
+            message +=
+              "<strong>Asal                                       :</strong> " +
+              asal +
+              "<br>";
+            message +=
+              "<strong>Tujuan                             :</strong> " + tujuan + "<br>";
+            message +=
+              "<strong>Pengirim                       :</strong> " + pengirim + "<br>";
+            message +=
+              "<strong>Penerima                    :</strong> " + penerima + "<br>";
+            message += "<strong>Tgl Pengiriman  :</strong> " + tanggalFormatted + "<br>";
+            message +=
+              "<strong>No Resi                         :</strong> " + no_resi + "<br>";
+            message += "<strong>---------------------------------</strong> ";
+            document.getElementById("popup-content").innerHTML = message;
+          });
+      } else {
+        alert("Gagal menambahkan data!");
+      }
+      console.log(res);
     })
-  }).then((res)=>{
-    if(res.ok){
-        alert("Berhasil manambahkan data!")
-    }else{
-        alert("Gagal menambahkan data!")
-    }
-    console.log(res);
-  }).catch((error)=>{
-    alert(`Error messages: ${error.message}`);
-  });
+    .catch((error) => {
+      alert(`Error messages: ${error.message}`);
+    });
 }
 
 function resetForm() {

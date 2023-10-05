@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
 
     if (resiInput.value.trim() !== "") {
-      fetch(`http://localhost:3000/api/cek-resi/${resiInput.value}`, {
+      const no_resi = resiInput.value.trim();
+      fetch(`http://localhost:3000/api/cek-resi/${no_resi}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -16,17 +17,15 @@ document.addEventListener("DOMContentLoaded", function () {
       })
         .then((res) => {
           if (res.ok) {
-            return res.json(); // Mengambil data JSON dari respons HTTP
+            return res.json();
           } else {
-            alert("Gagal mendapatkan data");
             throw new Error("Gagal mendapatkan data");
           }
         })
         .then((data) => {
-          // Menampilkan data dalam tabel
           const { no_resi, layanan, asal, tujuan, pengirim, penerima, tanggal } = data;
           trackingData.innerHTML = `
-            <tr>
+            <tr> 
                 <td>${no_resi}</td>
                 <td>${layanan}</td>
                 <td>${asal}</td>
@@ -36,8 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 <td>${tanggal}</td>
             </tr>
           `;
-
-          // Tampilkan tabel
           trackingTable.style.display = "table";
         })
         .catch((error) => {
