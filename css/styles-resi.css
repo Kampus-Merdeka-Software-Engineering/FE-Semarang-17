@@ -307,10 +307,13 @@ form.nomor-resi::after {
   .table-container {
     display: block;
     overflow-x: auto;
+    width: 100%;
   }
 
   #tracking-table {
     display: none;
+    width: 100%;
+    table-layout: auto;
     margin-top: 20px;
     font-size: 12px;
   }
@@ -350,7 +353,7 @@ footer {
 
 .footer-section {
   flex: 1;
-  flex-direction: column; /*new*/
+  flex-direction: column;
   align-items: flex-start; /* new-Mengatur agar elemen tampil di sebelah kiri */
   padding: 0 15px;
   text-align: left;
