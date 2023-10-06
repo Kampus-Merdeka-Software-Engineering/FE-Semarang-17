@@ -277,6 +277,10 @@ form.nomor-resi::after {
 
 /* Phone Responsif */
 @media screen and (max-width: 428px) {
+  nav{
+    position: relative;
+  }
+
   .cek-resi {
     padding: 25px;
   }
