@@ -297,7 +297,7 @@ li a:hover {
 @media screen and (max-width: 1024px) {
   .prev,
   .next {
-    top: 66%;
+    top: 34%;
   }
 }
 
