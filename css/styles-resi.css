@@ -305,9 +305,9 @@ form.nomor-resi::after {
   }
 
   .table-container {
-    display: block;
+    /* display: block; */
     overflow-x: auto;
-    width: 100%;
+    /* width: 100%; */
   }
 
   #tracking-table {
