@@ -25,7 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then((data) => {
           const { no_resi, layanan, asal, tujuan, pengirim, penerima, tanggal } = data;
-          const formattedTanggal = new Date(tanggal).toISOString().slice(0, 10);
+          const date = new Date(tanggal);
+          const formattedTanggal = `${date.getFullYear()}-${String(
+            date.getMonth() + 1
+          ).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
           trackingData.innerHTML = `
             <tr> 
                 <td>${no_resi}</td>
