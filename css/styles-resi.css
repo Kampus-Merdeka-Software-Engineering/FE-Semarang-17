@@ -305,14 +305,15 @@ form.nomor-resi::after {
   }
 
   .table-container {
-    display: block;
+    /* display: block; */
     overflow-x: auto;
     width: 100%;
   }
 
   #tracking-table {
     display: none;
-    width: 100%;
+    /* width: 100%; */
+    width: auto;
     table-layout: auto;
     margin-top: 20px;
     font-size: 12px;
@@ -320,7 +321,7 @@ form.nomor-resi::after {
 
   #tracking-table th,
   #tracking-table td {
-    display: table-cell;
+    /* display: table-cell; */
     width: 100%;
     box-sizing: border-box;
   }
