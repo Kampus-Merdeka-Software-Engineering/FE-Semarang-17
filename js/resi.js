@@ -25,10 +25,15 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then((data) => {
           const { no_resi, layanan, asal, tujuan, pengirim, penerima, tanggal } = data;
-          const date = new Date(tanggal);
-          const formattedTanggal = `${date.getFullYear()}-${String(
-            date.getMonth() + 1
-          ).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+          const today = new Date();
+          const yyyy = today.getFullYear();
+          let mm = today.getMonth() + 1; // Months start at 0!
+          let dd = today.getDate();
+
+          if (dd < 10) dd = '0' + dd;
+          if (mm < 10) mm = '0' + mm;
+
+          const formattedTanggal = yyyy + '-' + mm + '-' + dd ;
           trackingData.innerHTML = `
             <tr> 
                 <td>${no_resi}</td>
