@@ -61,7 +61,7 @@ nav {
 ul li {
   display: inline-block; /* Display list items in a row */
 }
-
+  
 li a {
   display: block;
   color: white;
@@ -339,7 +339,8 @@ form.nomor-resi::after {
   }
 
   #tracking-form.nomor-resi {
-    width: 650px;
+    /* width: 650px; */
+    width: 280px;
     justify-content: center;
     align-items: center;
   }
