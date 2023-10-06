@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then((data) => {
           const { no_resi, layanan, asal, tujuan, pengirim, penerima, tanggal } = data;
+          const formattedTanggal = new Date(tanggal).toISOString().slice(0, 10);
           trackingData.innerHTML = `
             <tr> 
                 <td>${no_resi}</td>
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <td>${tujuan}</td>
                 <td>${pengirim}</td>
                 <td>${penerima}</td>
-                <td>${tanggal}</td>
+                <td>${formattedTanggal}</td>
             </tr>
           `;
           trackingTable.style.display = "table";
